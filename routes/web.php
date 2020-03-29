@@ -17,13 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', 'PostController@index');
-Route::get('/posts/{post}', 'PostController@show');
+Route::get('/posts', 'PostController@index')->name('posts.index');
+
 Route::resource('posts', 'PostController')->except([
     'index', 'show'
 ])->middleware('can:manage-posts');
 
-Route::post('posts/{post}/like', 'PostController@like');
+Route::get('/posts/{post}', 'PostController@show');
+
+Route::post('/posts/{post}/like', 'PostController@like');
 
 Auth::routes();
 

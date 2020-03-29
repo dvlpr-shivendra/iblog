@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::latest()->paginate(20);
         return view('posts.index', compact('posts'));
     }
 
@@ -28,6 +28,10 @@ class PostController extends Controller
      */
     public function store() {
         $attributes = $this->validateAttributes();
+        $attributes['thumbnail'] = request()
+            ->file('thumbnail')
+            ->store('thumbnails');
+
         auth()->user()->posts()->create($attributes);
         return redirect('posts');
     }
@@ -91,6 +95,7 @@ class PostController extends Controller
         return request()->validate([
             'title' => 'required',
             'body' => 'required',
+            'description' => 'required',
         ]);
     }
 }

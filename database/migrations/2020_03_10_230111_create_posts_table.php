@@ -16,6 +16,8 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->text('description');
+            $table->string('thumbnail');
             $table->foreignId('user_id');
             $table->longText('body');
             $table->unsignedInteger('likes')->default(0);

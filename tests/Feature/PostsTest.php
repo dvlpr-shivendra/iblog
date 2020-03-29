@@ -47,6 +47,16 @@ class PostsTest extends TestCase
     }
 
     /** @test */
+    public function a_post_requires_a_description()
+    {
+        $user = $this->signIn();
+        $user->assignRole('admin');
+        $post = factory('App\Post')->raw(['body' => '']);
+        $response = $this->post('posts', $post);
+        $response->assertSessionHasErrors('description');
+    }
+
+    /** @test */
     public function anybody_can_like_a_post()
     {
         $this->withoutExceptionHandling();

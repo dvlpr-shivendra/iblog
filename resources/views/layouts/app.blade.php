@@ -4,29 +4,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @stack('styles')
+
 </head>
-<body>
+<body class="font-montserrat">
+
     <div id="app">
 
-        <navbar-component></navbar-component>
+        @include('partials.navbar')
 
-        <main class="py-4">
+        <main class="py-10 px-2">
             @yield('content')
         </main>
     </div>
+
+    <script src="{{</script>
+
+    @stack('scripts')
+
 </body>
 </html>
