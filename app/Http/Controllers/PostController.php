@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Exception;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class PostController extends Controller
@@ -85,6 +86,14 @@ class PostController extends Controller
         $post->likes += 1;
         $post->save();
         return $post->likes;
+    }
+
+    /**
+     * @return string
+     */
+    public function fileUpload() {
+        $file = request()->file('image')->store('post-images');
+        return Storage::url($file);
     }
 
     /**

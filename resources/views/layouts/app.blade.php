@@ -27,7 +27,7 @@
         </main>
     </div>
 
-    <script src="{{</script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     @stack('scripts')
 

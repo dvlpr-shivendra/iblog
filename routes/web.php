@@ -23,6 +23,8 @@ Route::resource('posts', 'PostController')->except([
     'index', 'show'
 ])->middleware('can:manage-posts');
 
+Route::post('/posts/file-upload', 'PostController@fileUpload');
+
 Route::get('/posts/{post}', 'PostController@show');
 
 Route::post('/posts/{post}/like', 'PostController@like');

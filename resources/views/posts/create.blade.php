@@ -70,5 +70,24 @@
 
     @push('scripts')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.js"></script>
+
+        <script>
+            addEventListener("trix-attachment-add", function(event) {
+                if (event.attachment.file) {
+                    const formData = new FormData();
+                    formData.append("image", event.attachment.file);
+                    axios.post('/posts/file-upload', formData, {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    }).then(function (response) {
+                        event.attachment.setAttributes({
+                            url: response.data
+                        })
+                        event.attachment.setUploadProgress(100);
+                    })
+                }
+            })
+        </script>
     @endpush
 @endsection
