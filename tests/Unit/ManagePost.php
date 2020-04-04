@@ -2,8 +2,11 @@
 
 namespace Tests\Unit;
 
+use App\Post;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 class ManagePost extends TestCase
@@ -27,11 +30,15 @@ class ManagePost extends TestCase
         $user = $this->signIn();
         $user->assignRole('admin');
         $this->get('posts/create')->assertStatus(200);
+        Storage::fake('local');
         $attributes = [
             'title' => $this->faker->sentence,
             'body' => $this->faker->paragraph,
+            'description' => $this->faker->paragraph,
+            'thumbnail' => UploadedFile::fake()->image('thumbnail.jpg'),
         ];
         $this->post('posts', $attributes);
+        $attributes['thumbnail'] = Post::first()->thumbnail;
         $this->assertDatabaseHas('posts', $attributes);
         $this->get('posts/1/edit')->assertStatus(200);
         $attributes['title'] = "Test Title";
@@ -39,6 +46,21 @@ class ManagePost extends TestCase
         $this->assertDatabaseHas('posts', $attributes);
         $this->delete('posts/1');
         $this->assertDatabaseMissing('posts', $attributes);
+        Storage::disk('local')->assertExists($attributes['thumbnail']);
     }
+
+    /** @test */
+    public function wysiwyg_image_upload()
+    {
+        $this->signIn()->assignRole('admin');
+        Storage::fake('local');
+        $response = $this->post('/posts/file-upload', [
+            'image' => UploadedFile::fake()->image('test.jpg')
+        ])->assertStatus(200);
+
+        $imagePath = ltrim($response->content(), '/storage');
+        Storage::disk('local')->assertExists($imagePath);
+    }
+
 
 }

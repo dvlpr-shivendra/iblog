@@ -3,6 +3,8 @@
 namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -23,9 +25,12 @@ abstract class TestCase extends BaseTestCase
     protected function createPost()
     {
         $user = $this->signIn();
+        Storage::fake('thumbnails');
         $post = $user->posts()->create([
             'title' => 'Test title',
             'body' => 'Test body',
+            'description' => 'Test description',
+            'thumbnail' => UploadedFile::fake()->image('thumbnail.jpg'),
         ]);
         auth()->logout();
         return $post;
