@@ -9,14 +9,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     @stack('styles')
 
 </head>
-<body class="font-montserrat">
+<body>
 
     <div id="app">
 

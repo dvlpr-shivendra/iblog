@@ -1,49 +1,47 @@
-<header class="border-b md:flex md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4">
-
-    <div class="flex items-center justify-between mb-4 md:mb-0">
-        <h1 class="leading-none text-2xl text-grey-darkest">
-            <a class="no-underline text-grey-darkest hover:text-black" href="/">
-                CoderProphet
-            </a>
-        </h1>
-
-        <a class="text-black hover:text-orange md:hidden" href="#">
-            <i class="fa fa-2x fa-bars"></i>
-        </a>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+      </a>
+  
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
-
-    <form class="mb-4 w-full md:mb-0 md:w-1/4">
-        <label class="hidden" for="search-form">Search</label>
-        <input class="bg-grey-lightest border-2 focus:border-orange p-2 rounded-lg shadow-inner w-full" placeholder="Search" type="text">
-        <button class="hidden">Submit</button>
-    </form>
-
-    <nav>
-        <ul class="list-reset md:flex md:items-center">
-            <li class="md:ml-4">
-                <a class="block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0"
-                    href="{{route('posts.index')}}"
-                >
-                    Posts
-                </a>
-            </li>
-            @can('manage-posts')
-            <li class="md:ml-4">
-                <a class="border-t block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0"
-                    href="{{route('posts.create')}}"
-                >
-                    Create
-                </a>
-            </li>
-            @endcan
-            <li class="md:ml-4">
-                <a class="border-t block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0"
-                   href="#"
-                >
-                    Contact
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-</header>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item {{ Request::is('posts') ? 'is-active' : '' }}" href="{{ route('posts.index') }}">
+          Posts
+        </a>
+        @can('manage-posts')
+        <a class="navbar-item {{ Request::is('posts/create') ? 'is-active' : '' }}" href="{{ route('posts.create') }}">
+          Create
+        </a>
+        @endcan
+      </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            @guest
+            <a class="button is-primary" href="/register">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light" href="/login">
+              Log in
+            </a>
+            @endguest
+            @auth
+            <form action="logout" method="POST">
+              @csrf
+              <button class="button is-light">Log out</button>
+            </form>
+            @endauth
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>

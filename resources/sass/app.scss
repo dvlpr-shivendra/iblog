@@ -1,5 +1,42 @@
-@tailwind base;
+$tag-radius: 25px;
 
-@tailwind components;
+$box-shadow:
+  0 0.2px 0.5px rgba(0, 0, 0, 0.006),
+  0 0.5px 1.3px rgba(0, 0, 0, 0.008),
+  0 0.9px 2.4px rgba(0, 0, 0, 0.01),
+  0 1.6px 4.2px rgba(0, 0, 0, 0.012),
+  0 2.9px 7.9px rgba(0, 0, 0, 0.014),
+  0 7px 19px rgba(0, 0, 0, 0.02)
+;
 
-@tailwind utilities
+
+@import 'bulma';
+
+// Generate margin padding helpers
+$spaceamounts: (1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+$sides: (top, bottom, left, right);
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}px !important;
+  }
+
+  .p-#{$space} {
+    padding: #{$space}px !important;
+  }
+
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+// END: Generate margin padding helpers
+
+.material-icons {
+  vertical-align: middle !important;
+}
