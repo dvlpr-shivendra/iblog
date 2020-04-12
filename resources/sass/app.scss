@@ -40,3 +40,10 @@ $sides: (top, bottom, left, right);
 .material-icons {
   vertical-align: middle !important;
 }
+
+.show-post img {
+    border-radius: 3px;
+}
+.stats {
+    position: sticky; top: 50vh; display: flex; align-items: center; justify-content: center;
+}

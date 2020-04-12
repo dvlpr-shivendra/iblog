@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="m-t-40 m-l-20 m-r-20">
+    <div class="m-t-40 m-l-10 m-r-10">
       <div class="columns">
         <div class="column is-three-quarters">
           @forelse($posts as $post)
@@ -31,7 +31,7 @@
                       </figure>
                       {{$post->user->name}}
                       <p class="is-pulled-right">
-                          3 <span class="material-icons">favorite_border</span>
+                          {{ $post->likes }} <span class="material-icons">favorite_border</span>
                           &middot;
                           39 <span class="material-icons">comment</span>
                       </p>

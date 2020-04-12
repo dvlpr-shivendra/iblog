@@ -12654,3 +12654,16 @@ label.panel-block:hover {
   vertical-align: middle !important;
 }
 
+.show-post img {
+  border-radius: 3px;
+}
+
+.stats {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
