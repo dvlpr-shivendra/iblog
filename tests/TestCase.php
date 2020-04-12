@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use App\Tag;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -22,16 +23,17 @@ abstract class TestCase extends BaseTestCase
         return $user;
     }
 
-    protected function createPost()
+    protected function createPost($tags = [])
     {
         $user = $this->signIn();
-        Storage::fake('thumbnails');
+        Storage::fake('local');
         $post = $user->posts()->create([
             'title' => 'Test title',
             'body' => 'Test body',
             'description' => 'Test description',
             'thumbnail' => UploadedFile::fake()->image('thumbnail.jpg'),
         ]);
+        if($tags) $post->tags()->attach($tags);
         auth()->logout();
         return $post;
     }

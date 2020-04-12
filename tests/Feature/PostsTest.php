@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Tag;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -51,7 +52,7 @@ class PostsTest extends TestCase
     {
         $user = $this->signIn();
         $user->assignRole('admin');
-        $post = factory('App\Post')->raw(['body' => '']);
+        $post = factory('App\Post')->raw(['description' => '']);
         $response = $this->post('posts', $post);
         $response->assertSessionHasErrors('description');
     }

@@ -33,7 +33,8 @@ class PostController extends Controller
             ->file('thumbnail')
             ->store('thumbnails');
 
-        auth()->user()->posts()->create($attributes);
+        $post = auth()->user()->posts()->create($attributes);
+        $post->tags()->attach(request()->tags);
         return redirect('posts');
     }
 
