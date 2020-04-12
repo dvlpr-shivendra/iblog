@@ -8,9 +8,13 @@
           <div class="box is-flex p-30 m-b-20" style="border: 1px solid #eee">
               <article>
                   <div class="tags m-b-10">
-                      <span class="tag is-info">Laravel</span>
-                      <span class="tag is-info">PHP</span>
-                      <span class="tag is-info">MySQL</span>
+                      @foreach($post->tags as $tag)
+                          <span class="tag is-info">
+                              <a href="{{route('posts.index', ['tag' => $tag->title])}}" class="has-text-white">
+                                  {{ $tag->title }}
+                              </a>
+                          </span>
+                      @endforeach
                   </div>
                   <h3 class="title is-size-4 is-capitalized m-b-10">
                       <a class="has-text-dark" href="{{ $post->url() }}">{{ $post->title }}</a>
@@ -18,7 +22,7 @@
                   <div class="m-b-10">
                       <span>{{ $post->created_at->diffForHumans() }}</span>
                       <p class="is-pulled-right">{{ readTime($post->body) }}</p>
-                      
+
                   </div>
                   <p class="subtitle is-size-6">{{ Str::limit($post->description, 240) }}</p>
                   <div>
@@ -43,20 +47,21 @@
           <div class="box" style="position: sticky; top: 100px; border: 1px solid #eee">
             <aside>
               <div>
-                <p class="m-b-75"><strong>Post By Tags</strong></p>
-                <p class=m-b-15 >Laravel <span class="tag is-info is-light">10</span></p>
-                <p class=m-b-15>PHP <span class="tag is-info is-light">103</span></p>
-                <p class=m-b-15>MySQL <span class="tag is-info is-light">310</span></p>
-                <p class=m-b-15>Apache <span class="tag is-info is-light">140</span></p>
-                <p class=m-b-15>Debian <span class="tag is-info is-light">210</span></p>
-                <p class=m-b-15>Fedora <span class="tag is-info is-light">105</span></p>
+                  @foreach($tags as $tag)
+                      <p class=m-b-15>
+                          <a href="{{route('posts.index', ['tag' => $tag->title])}}" class="has-text-dark">
+                              {{ $tag->title }}
+                              <span class="tag is-info is-light">{{ $tag->posts->count() }}</span>
+                          </a>
+                      </p>
+                  @endforeach
               </div>
             </aside>
           </div>
         </div>
       </div>
-      
+
     </div>
 
-    
+
 @endsection

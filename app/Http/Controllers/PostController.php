@@ -17,8 +17,16 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->paginate(20);
-        return view('posts.index', compact('posts'));
+        if(request('tag')) {
+            $posts = Tag::where('title', request('tag'))
+                ->firstOrFail()->posts()->paginate(20);
+        } else {
+            $posts = Post::latest()->paginate(20);
+        }
+        return view('posts.index', [
+          'tags' => Tag::all(),
+          'posts' => $posts,
+        ]);
     }
 
     public function show(Post $post) {
