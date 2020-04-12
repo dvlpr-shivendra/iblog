@@ -6,43 +6,67 @@
 
 @section('content')
 
-    <div>
+    <div class="container">
         <form method="post" action="{{route('posts.store')}}" enctype="multipart/form-data">
             @csrf
-            <label>
-                Post Title
-                <input id="title" name="title" type="text">
-            </label>
-            @error('title')
-            <p class="text-red-600 text-xs">{{ $message }}</p>
-            @enderror
+            <div class="field">
+                <label class="label">Title</label>
+                <div class="control">
+                    <input id="title" name="title" type="text" class="input">
+                    @error('title')
+                    <p class="text-red-600 text-xs">{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Description</label>
+                <div class="control">
+                    <textarea name="description" id="description" class="textarea"></textarea>
+                    @error('description')
+                    <p class="text-red-600 text-xs">{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
 
-            <label>
-                Post Description
-                <textarea name="description" id="description"></textarea>
-            </label>
-            @error('description')
-            <p class="text-red-600 text-xs">{{ $message }}</p>
-            @enderror
+            <div class="field">
+                <label class="label">Body</label>
+                <input id="body" type="hidden" name="body">
+                <trix-editor input="body"></trix-editor>
+                @error('body')
+                <p class="text-red-600 text-xs">{{ $message }}</p>
+                @enderror
+            </div>
 
-            <label>
-                Post Body
-            </label>
-            <input id="body" type="hidden" name="body">
-            <trix-editor input="body"></trix-editor>
-            @error('body')
-            <p class="text-red-600 text-xs">{{ $message }}</p>
-            @enderror
+            <div class="field">
+                <label class="label">Tags</label>
+                <div class="select is-multiple">
+                    <select multiple size="{{ $tags->count() }}" name="tags[]" id="tags">
+                        @foreach ($tags as $tag)
+                            <option value="{{$tag->id}}">{{$tag->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
 
-            <label>
-                Post Thumbnail
-                <input type="file" name="thumbnail" id="thumbnail">
-            </label>
-            @error('thumbnail')
-            <p class="text-red-600 text-xs">{{ $message }}</p>
-            @enderror
+            <div class="field">
+                <div class="file has-name">
+                    <label class="file-label">
+                        <input type="file" name="thumbnail" id="thumbnail" class="file-input">
+                        <span class="file-cta">
+                            <span class="file-icon">
+                                <span class="material-icons">insert_photo</span>
+                            </span>
+                            <span class="file-label">
+                                Thumbnail
+                            </span>
+                        </span>
+                    </label>
+                </div>
+            </div>
 
-            <button>Create</button>
+            <div class="control">
+                <button class="button is-primary">Submit</button>
+            </div>
 
         </form>
     </div>
@@ -51,7 +75,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.js"></script>
 
         <script>
-            addEventListener("trix-attachment-add", function(event) {
+            addEventListener("trix-attachment-add", function (event) {
                 if (event.attachment.file) {
                     const formData = new FormData();
                     formData.append("image", event.attachment.file);
