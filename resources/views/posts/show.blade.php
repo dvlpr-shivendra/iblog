@@ -8,7 +8,7 @@
             <h1 class="is-size-3">{{$post->title}}</h1>
             <div class="m-b-10 m-t-10">
                 <figure class="image is-24x24 is-pulled-left m-r-10">
-                    <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                    <img class="is-rounded" src="{{ $post->user->gravatar }}">
                 </figure>
                 {{$post->user->name}}
                 <p class="is-pulled-right">

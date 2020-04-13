@@ -27,7 +27,7 @@
                   <p class="subtitle is-size-6">{{ Str::limit($post->description, 240) }}</p>
                   <div>
                       <figure class="image is-24x24 is-pulled-left m-r-10">
-                          <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                          <img class="is-rounded" src="{{ $post->user->gravatar }}">
                       </figure>
                       {{$post->user->name}}
                       <p class="is-pulled-right">
