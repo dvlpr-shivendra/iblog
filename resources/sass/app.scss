@@ -5,26 +5,28 @@ $box-shadow: none;
 $dark: #100e17;
 $grey-dark: #201c29;
 
+.columns {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 @import 'bulma';
 
 // Generate margin padding helpers
-$spaceamounts: (1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+$spaceAmounts: (1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
 $sides: (top, bottom, left, right);
 
-@each $space in $spaceamounts {
+@each $space in $spaceAmounts {
   .m-#{$space} {
     margin: #{$space}px !important;
   }
-
   .p-#{$space} {
     padding: #{$space}px !important;
   }
-
   @each $side in $sides {
     .m-#{str-slice($side, 0, 1)}-#{$space} {
       margin-#{$side}: #{$space}px !important;
     }
-
     .p-#{str-slice($side, 0, 1)}-#{$space} {
       padding-#{$side}: #{$space}px !important;
     }

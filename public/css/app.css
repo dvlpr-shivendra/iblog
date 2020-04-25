@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+.columns {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
 /*! bulma.io v0.8.1 | MIT License | github.com/jgthms/bulma */
 
 @-webkit-keyframes spinAround {
