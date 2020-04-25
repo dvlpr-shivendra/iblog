@@ -33,7 +33,7 @@
                       <p class="is-pulled-right">
                           <span class="material-icons">thumb_up</span> {{ $post->likes }}
                           &middot;
-                          <span class="material-icons">mode_comment</span> 39
+                          <span class="material-icons">mode_comment</span> {{ $post->comments->count() }}
                       </p>
                   </div>
               </article>
