@@ -10,7 +10,8 @@ $grey-dark: #201c29;
     margin-right: 0 !important;
 }
 
-@import 'bulma';
+@import '~bulma';
+@import '~bulma-tooltip';
 
 // Generate margin padding helpers
 $spaceAmounts: (1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
@@ -48,9 +49,18 @@ nav {
 
 .show-post img {
     border-radius: 3px;
+    width: 100%;
 }
 .stats {
-    position: sticky; top: 50vh; display: flex; align-items: center; justify-content: center;
+    position: sticky;
+    top: 50vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    div {
+        cursor: pointer;
+    }
 }
 
 .subtitle {
@@ -58,7 +68,6 @@ nav {
     letter-spacing: 1px;
 }
 
-pre {
-    background: #201c29;
-    color: white;
+trix-editor {
+    background: #fff;
 }

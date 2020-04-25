@@ -17,13 +17,13 @@
                     {{ readTime($post->body) }}
                 </p>
             </div>
-            <img src="{{ Storage::url($post->thumbnail) }}" alt="Post Thumbnail">
+            <img src="{{ Storage::url($post->thumbnail) }}" alt="Post Thumbnail" class="m-b-20">
             <div class="has-text-justified">{!! $post->body !!}</div>
         </div>
         <div class="column">
             <div class="stats">
-                {{ $post->likes }} <span class="material-icons">favorite_border</span>&nbsp;
-                {{ 78 }} <span class="material-icons">message</span>
+                <div>{{ $post->likes }} <span class="material-icons" data-tooltip="I like it">thumb_up</span></div>
+                <div>{{ 78 }} <span class="material-icons" data-tooltip="Say something">mode_comment</span></div>
             </div>
         </div>
     </div>
