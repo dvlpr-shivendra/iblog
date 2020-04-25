@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container p-t-40">
         <form method="post" action="{{route('posts.store')}}" enctype="multipart/form-data">
             @csrf
             <div class="field">
@@ -40,7 +40,7 @@
             <div class="field">
                 <label class="label">Tags</label>
                 <div class="select is-multiple">
-                    <select multiple size="{{ $tags->count() }}" name="tags[]" id="tags">
+                    <select multiple size="3" name="tags[]" id="tags">
                         @foreach ($tags as $tag)
                             <option value="{{$tag->id}}">{{$tag->title}}</option>
                         @endforeach
