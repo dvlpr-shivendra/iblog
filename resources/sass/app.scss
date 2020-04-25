@@ -1,14 +1,9 @@
 $tag-radius: 25px;
 
-$box-shadow:
-  0 0.2px 0.5px rgba(0, 0, 0, 0.006),
-  0 0.5px 1.3px rgba(0, 0, 0, 0.008),
-  0 0.9px 2.4px rgba(0, 0, 0, 0.01),
-  0 1.6px 4.2px rgba(0, 0, 0, 0.012),
-  0 2.9px 7.9px rgba(0, 0, 0, 0.014),
-  0 7px 19px rgba(0, 0, 0, 0.02)
-;
+$box-shadow: none;
 
+$dark: #100e17;
+$grey-dark: #201c29;
 
 @import 'bulma';
 
@@ -37,6 +32,14 @@ $sides: (top, bottom, left, right);
 }
 // END: Generate margin padding helpers
 
+#app {
+    background: url(/images/bg.jpg);
+}
+
+nav {
+    border-bottom: 3px solid $primary;
+}
+
 .material-icons {
   vertical-align: middle !important;
 }
@@ -46,4 +49,14 @@ $sides: (top, bottom, left, right);
 }
 .stats {
     position: sticky; top: 50vh; display: flex; align-items: center; justify-content: center;
+}
+
+.subtitle {
+    line-height: 1.4rem;
+    letter-spacing: 1px;
+}
+
+pre {
+    background: #201c29;
+    color: white;
 }
