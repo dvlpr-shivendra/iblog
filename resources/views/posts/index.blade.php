@@ -31,9 +31,9 @@
                       </figure>
                       {{$post->user->name}}
                       <p class="is-pulled-right">
-                          {{ $post->likes }} <span class="material-icons">favorite_border</span>
+                          <span class="material-icons">thumb_up</span> {{ $post->likes }}
                           &middot;
-                          39 <span class="material-icons">comment</span>
+                          <span class="material-icons">mode_comment</span> 39
                       </p>
                   </div>
               </article>
