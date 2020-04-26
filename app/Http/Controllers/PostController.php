@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Tag;
 use Exception;
+use Illuminate\Support\Str;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
@@ -42,6 +43,8 @@ class PostController extends Controller
             ->file('thumbnail')
             ->store('thumbnails');
 
+        $attributes['slug'] = Str::slug($attributes['title']);
+        
         $post = auth()->user()->posts()->create($attributes);
         $post->tags()->attach(request()->tags);
         return redirect('posts');

@@ -12,7 +12,7 @@ class Post extends Model
     protected $guarded = [];
 
     public function url() {
-        return url("posts/{$this->id}");
+        return url("posts/{$this->slug}");
     }
 
     public function user() {
@@ -22,5 +22,10 @@ class Post extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class)->withTimestamps();
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

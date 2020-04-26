@@ -24,7 +24,7 @@ class PostsTest extends TestCase
     {
         $this->withoutExceptionHandling();
         $post = $this->createPost();
-        $this->get("posts/{$post->id}")->assertSee($post->title);
+        $this->get("posts/{$post->slug}")->assertSee($post->title);
     }
 
     /** @test */
@@ -63,7 +63,7 @@ class PostsTest extends TestCase
         $this->withoutExceptionHandling();
         $post = $this->createPost();
         $likes = $post->likes;
-        $response = $this->post("posts/{$post->id}/like");
+        $response = $this->post("posts/{$post->slug}/like");
         $this->assertEquals(++$likes, $response->content());
     }
 

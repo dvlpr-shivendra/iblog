@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\Tag;
+use Illuminate\Support\Str;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -29,7 +29,8 @@ abstract class TestCase extends BaseTestCase
         Storage::fake('local');
         $post = $user->posts()->create([
             'title' => 'Test title',
-            'body' => 'Test body',
+            'body' => $title = 'Test title',
+            'slug' => Str::slug($title),
             'description' => 'Test description',
             'thumbnail' => UploadedFile::fake()->image('thumbnail.jpg'),
         ]);
