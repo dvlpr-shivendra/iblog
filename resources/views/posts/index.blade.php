@@ -16,26 +16,26 @@
                           </span>
                       @endforeach
                   </div>
-                  <h3 class="title is-size-4 is-capitalized m-b-10">
-                      <a class="has-text-white" href="{{ $post->url() }}">{{ $post->title }}</a>
-                  </h3>
-                  <div class="m-b-10">
-                      <span>{{ $post->created_at->diffForHumans() }}</span>
-                      <p class="is-pulled-right">{{ readTime($post->body) }}</p>
+                  <a href="{{ $post->url() }}" class="has-text-grey">
+                    <h3 class="title is-size-4 is-capitalized m-b-10 has-text-white">{{ $post->title }}</h3>
+                    <div class="m-b-10">
+                        <span>{{ $post->created_at->diffForHumans() }}</span>
+                        <p class="is-pulled-right">{{ readTime($post->body) }}</p>
 
-                  </div>
-                  <p class="subtitle is-size-6 has-text-grey-lighter">{{ Str::limit($post->description, 240) }}</p>
-                  <div>
-                      <figure class="image is-24x24 is-pulled-left m-r-10">
-                          <img class="is-rounded" src="{{ $post->user->gravatar }}">
-                      </figure>
-                      {{$post->user->name}}
-                      <p class="is-pulled-right">
-                          <span class="material-icons">thumb_up</span> {{ $post->likes }}
-                          &middot;
-                          <span class="material-icons">mode_comment</span> {{ $post->comments->count() }}
-                      </p>
-                  </div>
+                    </div>
+                    <p class="subtitle is-size-6 has-text-grey-lighter">{{ Str::limit($post->description, 240) }}</p>
+                    <div>
+                        <figure class="image is-24x24 is-pulled-left m-r-10">
+                            <img class="is-rounded" src="{{ $post->user->gravatar }}">
+                        </figure>
+                        {{$post->user->name}}
+                        <p class="is-pulled-right">
+                            <span class="material-icons">thumb_up</span> {{ $post->likes }}
+                            &middot;
+                            <span class="material-icons">mode_comment</span> {{ $post->comments->count() }}
+                        </p>
+                    </div>
+                  </a>
               </article>
           </div>
           @empty

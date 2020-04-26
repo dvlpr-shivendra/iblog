@@ -5,7 +5,7 @@
     <div class="columns show-post m-l-5 m-r-5 m-t-20">
         <div class="column"></div>
         <div class="column is-half">
-            <h1 class="is-size-3">{{$post->title}}</h1>
+            <h1 class="is-size-3 is-capitalized">{{$post->title}}</h1>
             <div class="m-b-10 m-t-10">
                 <figure class="image is-24x24 is-pulled-left m-r-10">
                     <img class="is-rounded" src="{{ $post->user->gravatar }}">
