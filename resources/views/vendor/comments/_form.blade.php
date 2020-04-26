@@ -43,7 +43,7 @@
                 <textarea class="textarea @if($errors->has('message')) is-danger @endif" name="message" rows="3"></textarea>
 {{--            <small class="form-text text-muted"><a target="_blank" href="https://help.github.com/articles/basic-writing-and-formatting-syntax">Markdown</a> cheatsheet.</small>--}}
         </div>
-        <button class="button is-link m-t-5">Comment</button>
+        <button class="button is-primary m-t-5">Comment</button>
     </form>
 </div>
 <br />

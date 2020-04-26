@@ -74,3 +74,26 @@ trix-editor {
 .light-border {
   border: 1px solid #ccc; border-radius: 3px;
 }
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+  .stats {
+    position: static;
+    flex-direction: row;
+    background: linear-gradient(to left, rgb(33, 200, 246), rgb(99, 123, 255));
+    padding: 20px;
+    border-radius: 3px;
+    color: #fff;
+
+    .comments {
+      display: none;
+    }
+
+    .likes {
+      font-size: 1.1rem;
+    }
+  }
+}

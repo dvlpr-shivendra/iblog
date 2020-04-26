@@ -14298,3 +14298,22 @@ trix-editor {
   border-radius: 3px;
 }
 
+@media only screen and (max-width: 768px) {
+  .stats {
+    position: static;
+    flex-direction: row;
+    background: linear-gradient(to left, #21c8f6, #637bff);
+    padding: 20px;
+    border-radius: 3px;
+    color: #fff;
+  }
+
+  .stats .comments {
+    display: none;
+  }
+
+  .stats .likes {
+    font-size: 1.1rem;
+  }
+}
+
