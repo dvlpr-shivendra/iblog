@@ -17,13 +17,19 @@
                     {{ readTime($post->body) }}
                 </p>
             </div>
-            <img src="{{ Storage::url($post->thumbnail) }}" alt="Post Thumbnail" class="m-b-20">
+            <img src="{{ Storage::url($post->thumbnail) }}" alt="Post Thumbnail" class="m-b-10">
             <div class="has-text-justified">{!! $post->body !!}</div>
         </div>
         <div class="column">
-            <div class="stats">
-                <div class="likes"><span class="material-icons" data-tooltip="I like it">thumb_up</span> {{ $post->likes }}</div>
-                <div class="comments"><span class="material-icons" data-tooltip="Say something">mode_comment</span> {{ $post->approvedComments->count() }}</div>
+            <div class="stats is-hidden">
+                <div class="likes" data-post="{{ $post->slug }}">
+                    <span class="material-icons thumb" data-tooltip="I like it">thumb_up</span>
+                    <span id="likes-counter">{{ $post->likes }}</span>
+                </div>
+                <div class="comments">
+                    <span class="material-icons" data-tooltip="Say something">mode_comment</span>
+                    <span>{{ $post->approvedComments->count() }}</span>
+                </div>
             </div>
         </div>
     </div>
@@ -38,4 +44,40 @@
         </div>
         <div class="column"></div>
     </div>
+
+    @push('scripts')
+    <script>
+
+        if (localStorage.getItem("{{ $post->slug }}")) {
+            document.querySelector(".thumb").classList.add("has-text-danger")
+        }
+
+
+        document.querySelector(".likes").addEventListener("click", (event) => {
+            
+            const post = document.querySelector(".likes").dataset.post;
+            
+            if (!localStorage.getItem(post)) {
+                const likesCounter = document.querySelector("#likes-counter");
+                axios.post(`/posts/${post}/like`, {}).then(response => {
+                    likesCounter.innerText = response.data;
+                    localStorage.setItem(post, true);
+                    document.querySelector(".thumb").classList.add("has-text-danger")
+                })
+            }
+            
+        });
+
+        const stats = document.querySelector('.stats');
+        window.addEventListener('scroll', function(e) {
+            if (window.scrollY > window.innerHeight) {
+                if (stats.classList.contains('is-hidden')) {
+                    stats.classList.remove('is-hidden');
+                }
+            } else {
+                stats.classList.add('is-hidden');
+            }
+        })
+    </script>
+    @endpush
 @endsection
