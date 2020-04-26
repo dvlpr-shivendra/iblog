@@ -27,6 +27,14 @@
         </main>
     </div>
 
+    <footer class="footer p-t-25 p-b-25">
+        <div class="content has-text-centered has-text-grey">
+          <p>
+            Designed & Developed by Shivendra TechSter with Laravel and Bulma CSS.
+          </p>
+        </div>
+      </footer>
+
     <script src="{{ asset('js/app.js') }}"></script>
 
     @stack('scripts')

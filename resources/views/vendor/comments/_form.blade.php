@@ -1,4 +1,4 @@
-<div class="">
+<div class="m-t-50">
     @if($errors->has('commentable_type'))
         <div class="alert alert-danger" role="alert">
             {{ $errors->first('commentable_type') }}
@@ -9,6 +9,7 @@
             {{ $errors->first('commentable_id') }}
         </div>
     @endif
+    
     <form method="POST" action="{{ route('comments.store') }}">
         @csrf
         @honeypot

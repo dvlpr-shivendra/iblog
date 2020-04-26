@@ -2,19 +2,22 @@
 @php($markdown->setSafeMode(true))
 
 @if(isset($reply) && $reply === true)
-    <div id="comment-{{ $comment->id }}" class="media p-10">
+    <div id="comment-{{ $comment->id }}" class="media m-l-40">
         @else
-            <li id="comment-{{ $comment->id }}" class="media">
+            <li id="comment-{{ $comment->id }}" class="media p-15 light-border">
                 @endif
-                <div style="width: 100%">
+                <div style="width: 100%;">
                     <figure class="image is-24x24 is-pulled-left m-r-10">
                         <img class="is-rounded" src="https://www.gravatar.com/avatar/{{ md5($comment->commenter->email ?? $comment->guest_email) }}.jpg?s=64">
                     </figure>
-                    <h5 class="has-text-grey-dark">{{ $comment->commenter->name ?? $comment->guest_name }} <small
-                            class="has-text-grey">- {{ $comment->created_at->diffForHumans() }}</small></h5>
-                    <div style="white-space: pre-wrap;" class="m-t-5 m-b-5">{!! $markdown->line($comment->comment) !!}</div>
+                    <h5 class="has-text-grey-dark">{{ $comment->commenter->name ?? $comment->guest_name }}
+                        <small
+                            class="has-text-grey">- {{ $comment->created_at->diffForHumans() }}
+                        </small>
+                    </h5>
+                    <div style="white-space: pre-wrap;" class="m-t-5 m-b-5 m-l-35">{!! $markdown->line($comment->comment) !!}</div>
 
-                    <div>
+                    <div class="m-l-35">
                         @can('reply-to-comment', $comment)
                             <button onclick="document.querySelector('#reply-{{ $comment->id }}').classList.add('is-active')"
                                     class="button is-text">Reply
@@ -63,8 +66,6 @@
                           </div>
                       </div>
                     @endcan
-
-                    <br/>{{-- Margin bottom --}}
 
                     {{-- Recursion for children --}}
                     @if($grouped_comments->has($comment->id))
