@@ -7,7 +7,7 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Laravelista\Comments\Events\CommentCreated;
 use Illuminate\Support\Facades\Event;
-use App\SetFlashCommentReceived;
+use App\Handlers\SetFlashCommentReceived;
 
 class EventServiceProvider extends ServiceProvider
 {
