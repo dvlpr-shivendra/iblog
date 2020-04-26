@@ -27,17 +27,12 @@
 
         <div class="navbar-end">
             <div class="navbar-item">
-                <div class="field has-addons">
-                    <div class="control">
-                        <input class="input" type="text" placeholder="Find a post">
-                    </div>
-                    <div class="control">
-                        <a class="button is-info">
-                            <span class="material-icons">
-                                search
-                            </span>
-                        </a>
-                    </div>
+                <div class="control">
+                    <a class="button is-info is-rounded is-outlined">
+                        <span class="material-icons">
+                            search
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
