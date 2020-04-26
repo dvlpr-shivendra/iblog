@@ -84,9 +84,9 @@ class PostController extends Controller
     public function destroy(Post $post) {
         try {
             $post->delete();
-            return redirect('posts')->with('success', 'Post Deleted.');
+            return back()->with('success', 'Post Deleted.');
         } catch (Exception $e) {
-            return redirect('posts')->with('error', $e->getMessage());
+            return back()->with('error', $e->getMessage());
         }
     }
 
