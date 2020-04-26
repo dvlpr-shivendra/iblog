@@ -34,6 +34,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/search/post', 'SearchController@post')->name('search.post');
+
 Route::get('/admin/comments', 'AdminController@comments')->middleware('can:manage-posts');
 Route::get('/admin/posts', 'AdminController@managePosts')->middleware('can:manage-posts');
 Route::get('/admin/approve-comment/{comment}', 'AdminController@approveComment')->middleware('can:manage-posts');

@@ -2110,6 +2110,32 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./bulma */ "./resources/js/bulma.js");
 
+document.querySelector("#search").addEventListener("input", function (event) {
+  var query = event.target.value;
+  var searchResults = document.querySelector("#search-results");
+  axios.post('/search/post', {
+    'title': query
+  }).then(function (response) {
+    searchResults.innerHTML = "";
+    var posts = response.data;
+
+    if (!posts.length) {
+      var notFound = document.createElement("p");
+      notFound.classList.add("panel-block");
+      notFound.innerText = "No such post found";
+      return searchResults.appendChild(notFound);
+    }
+
+    posts.forEach(function (post) {
+      var postItem = document.createElement("a");
+      postItem.classList.add("panel-block");
+      postItem.innerText = post.title;
+      postItem.href = "/posts/".concat(post.slug);
+      searchResults.appendChild(postItem);
+    });
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

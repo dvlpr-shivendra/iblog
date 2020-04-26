@@ -12,7 +12,8 @@
         </a>
 
         <div class="navbar-item is-hidden-desktop">
-            <a class="button is-info search-button">
+            <a class="button is-info search-button"
+                onclick="document.querySelector('#search-modal').classList.add('is-active')">
                 <span class="material-icons">
                     search
                 </span>
@@ -37,7 +38,8 @@
         <div class="navbar-end">
             <div class="navbar-item is-hidden-touch">
                 <div class="control">
-                    <a class="button is-info search-button">
+                    <a class="button is-info search-button"
+                        onclick="document.querySelector('#search-modal').classList.add('is-active')">
                         <span class="material-icons">
                             search
                         </span>

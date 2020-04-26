@@ -27,6 +27,7 @@
 
         @include('partials.navbar')
         @include('partials.flash')
+        @include('partials.search')
 
         <main class="py-10 px-2">
             @yield('content')
