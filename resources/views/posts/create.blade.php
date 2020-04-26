@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <div class="container p-t-40">
+    <div class="container p-t-40 p-b-40">
         <form method="post" action="{{route('posts.store')}}" enctype="multipart/form-data">
             @csrf
             <div class="field">
