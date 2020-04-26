@@ -21,14 +21,14 @@
             <div class="has-text-justified">{!! $post->body !!}</div>
             <div class="m-t-20">
                 <div style="border-bottom: 1px solid #ccc"></div>
-                <h3 class="m-b-20 m-t-20 is-size-4">Comments ({{ $post->comments->count() }})</h3>
+                <h3 class="m-b-20 m-t-20 is-size-4">Comments ({{ $post->approvedComments->count() }})</h3>
                 @comments(['model' => $post, 'approved' => true])
             </div>
         </div>
         <div class="column">
             <div class="stats">
                 <div>{{ $post->likes }} <span class="material-icons" data-tooltip="I like it">thumb_up</span></div>
-                <div>{{ $post->comments->count() }} <span class="material-icons" data-tooltip="Say something">mode_comment</span></div>
+                <div>{{ $post->approvedComments->count() }} <span class="material-icons" data-tooltip="Say something">mode_comment</span></div>
             </div>
         </div>
     </div>

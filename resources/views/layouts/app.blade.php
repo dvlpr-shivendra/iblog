@@ -21,6 +21,7 @@
     <div id="app">
 
         @include('partials.navbar')
+        @include('partials.flash')
 
         <main class="py-10 px-2">
             @yield('content')
