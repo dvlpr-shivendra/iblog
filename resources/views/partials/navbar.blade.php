@@ -10,6 +10,15 @@
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
         </a>
+
+        <div class="navbar-item is-hidden-desktop">
+            <a class="button is-info search-button">
+                <span class="material-icons">
+                    search
+                </span>
+            </a>
+        </div>
+        
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu">
@@ -26,9 +35,9 @@
         </div>
 
         <div class="navbar-end">
-            <div class="navbar-item">
+            <div class="navbar-item is-hidden-touch">
                 <div class="control">
-                    <a class="button is-info is-rounded is-outlined">
+                    <a class="button is-info search-button">
                         <span class="material-icons">
                             search
                         </span>
