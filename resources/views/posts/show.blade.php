@@ -27,7 +27,9 @@
                     <span id="likes-counter">{{ $post->likes }}</span>
                 </div>
                 <div class="comments">
-                    <span class="material-icons" data-tooltip="Say something">mode_comment</span>
+                    <a href="#comments">
+                        <span class="material-icons" data-tooltip="Say something">mode_comment</span>
+                    </a>
                     <span>{{ $post->approvedComments->count() }}</span>
                 </div>
             </div>
@@ -37,7 +39,7 @@
         <div class="column"></div>
         <div class="column is-half">
             <div class="m-t-20">
-                <div style="border-bottom: 1px solid #ccc"></div>
+                <div style="border-bottom: 1px solid #ccc" id="comments"></div>
                 <h3 class="m-b-20 m-t-20 is-size-4">Comments ({{ $post->approvedComments->count() }})</h3>
                 @comments(['model' => $post, 'approved' => true])
             </div>
@@ -70,7 +72,7 @@
 
         const stats = document.querySelector('.stats');
         window.addEventListener('scroll', function(e) {
-            if (window.scrollY > window.innerHeight) {
+            if (window.scrollY > (window.innerHeight / 3)) {
                 if (stats.classList.contains('is-hidden')) {
                     stats.classList.remove('is-hidden');
                 }
