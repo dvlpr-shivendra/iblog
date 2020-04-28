@@ -2,7 +2,7 @@
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
-        <p class="modal-card-title">Modal title</p>
+        <p class="modal-card-title">Search Post</p>
         <button class="delete" aria-label="close"
             onclick="document.querySelector('#search-modal').classList.remove('is-active')">
         </button>
@@ -11,7 +11,7 @@
         <nav class="panel">
             <div class="panel-block">
               <p class="control has-icons-left">
-                <input class="input" type="text" placeholder="Find a post" id="search" autocomplete="off">
+                <input class="input" type="text" placeholder="" id="search" autocomplete="off">
                 <span class="icon is-left">
                   <i class="material-icons" aria-hidden="true">search</i>
                 </span>
