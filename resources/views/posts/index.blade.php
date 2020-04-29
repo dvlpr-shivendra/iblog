@@ -5,7 +5,7 @@
       <div class="columns">
         <div class="column is-three-quarters">
           @forelse($posts as $post)
-          <div class="box is-flex p-30 m-b-20 has-text-grey-light has-background-grey-dark">
+          <div class="box is-flex has-text-grey-light has-background-grey-dark">
               <article>
                   <div class="tags m-b-10">
                       @foreach($post->tags as $tag)
