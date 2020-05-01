@@ -10,6 +10,12 @@ require('./bulma');
 document.querySelector("#search").addEventListener("input", (event) => {
     const query = event.target.value;
     const searchResults = document.querySelector("#search-results");
+
+    if(!query.length) {
+        searchResults.innerHTML = "";
+        return false;
+    };
+
     axios.post('/search/post', {
         'title': query,
     }).then(response => {

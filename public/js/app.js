@@ -2113,6 +2113,13 @@ __webpack_require__(/*! ./bulma */ "./resources/js/bulma.js");
 document.querySelector("#search").addEventListener("input", function (event) {
   var query = event.target.value;
   var searchResults = document.querySelector("#search-results");
+
+  if (!query.length) {
+    searchResults.innerHTML = "";
+    return false;
+  }
+
+  ;
   axios.post('/search/post', {
     'title': query
   }).then(function (response) {
