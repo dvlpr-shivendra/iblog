@@ -8,7 +8,7 @@
                 @endif
                 <div style="width: 100%;">
                     <figure class="image is-24x24 is-pulled-left m-r-10">
-                        <img class="is-rounded" src="https://www.gravatar.com/avatar/{{ md5($comment->commenter->email ?? $comment->guest_email) }}.jpg?s=64">
+                        <img class="is-rounded" src="https://www.gravatar.com/avatar/{{ md5($comment->commenter->email ?? $comment->guest_email) }}.jpg?s=64" alt="user avatar">
                     </figure>
                     <h5 class="has-text-grey-dark">{{ $comment->commenter->name ?? $comment->guest_name }}
                         <small

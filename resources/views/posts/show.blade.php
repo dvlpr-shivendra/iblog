@@ -8,7 +8,7 @@
             <h1 class="is-size-3 is-capitalized">{{$post->title}}</h1>
             <div class="m-b-10 m-t-10">
                 <figure class="image is-24x24 is-pulled-left m-r-10">
-                    <img class="is-rounded" src="{{ $post->user->gravatar }}">
+                    <img class="is-rounded" src="{{ $post->user->gravatar }}" alt="{{ $post->user->name }}">
                 </figure>
                 {{$post->user->name}}
                 <p class="is-pulled-right">

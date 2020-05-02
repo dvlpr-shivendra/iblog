@@ -26,7 +26,7 @@
                     <p class="subtitle is-size-6 has-text-grey-lighter">{{ Str::limit($post->description, 240) }}</p>
                     <div>
                         <figure class="image is-24x24 is-pulled-left m-r-10">
-                            <img class="is-rounded" src="{{ $post->user->gravatar }}">
+                            <img class="is-rounded" src="{{ $post->user->gravatar }}" alt="{{ $post->user->name }}">
                         </figure>
                         {{$post->user->name}}
                         <p class="is-pulled-right">

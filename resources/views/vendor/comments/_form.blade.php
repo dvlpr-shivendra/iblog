@@ -19,8 +19,9 @@
         {{-- Guest commenting --}}
         @if(isset($guest_commenting) and $guest_commenting == true)
             <div class="field">
-                <label for="message">Name</label>
+            <label for="message">Name
                 <input type="text" class="input @if($errors->has('guest_name')) is-danger @endif" name="guest_name" />
+            </label>
                 @error('guest_name')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -28,8 +29,9 @@
                 @enderror
             </div>
             <div class="field">
-                <label for="message">Email</label>
+            <label for="message">Email
                 <input type="email" class="input @if($errors->has('guest_email')) is-danger @endif" name="guest_email" />
+            </label>
                 @error('guest_email')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -39,8 +41,9 @@
         @endif
 
         <div class="field">
-            <label for="message">Comment</label>
+            <label for="message">Comment
                 <textarea class="textarea @if($errors->has('message')) is-danger @endif" name="message" rows="3"></textarea>
+            </label>
 {{--            <small class="form-text text-muted"><a target="_blank" href="https://help.github.com/articles/basic-writing-and-formatting-syntax">Markdown</a> cheatsheet.</small>--}}
         </div>
         <button class="button is-primary m-t-5">Comment</button>
