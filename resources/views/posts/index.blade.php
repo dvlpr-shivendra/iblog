@@ -9,7 +9,7 @@
               <article>
                   <div class="tags m-b-10">
                       @foreach($post->tags as $tag)
-                          <span class="tag has-background-dark">
+                          <span class="tag has-background-grey-darker">
                               <a href="{{route('posts.index', ['tag' => $tag->title])}}" class="has-text-white">
                                   {{ $tag->title }}
                               </a>
