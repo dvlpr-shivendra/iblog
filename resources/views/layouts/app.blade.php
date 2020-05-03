@@ -8,7 +8,7 @@
 
     <title>{{ $post->title ?? 'CoderProphet' }}</title>
 
-    <meta name="description" content="{{ $post->description ?? "" }}">
+    <meta name="description" content="{{ $post->description ?? "CoderProphet brought programming and technology guide for you. Take your skills to the next level with me on Programmning, Linux, Technology and so much more." }}">
 
     <meta property="og:title" content="{{ $post->title ?? 'CoderProphet' }}" />
     <meta property="og:type" content="Programming.Posts" />
@@ -17,7 +17,7 @@
     <meta property="og:site_name" content="{{ env('APP_NAME')}}" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:description" content="{{ $post->description ?? "" }}" />
+    <meta name="twitter:description" content="{{ $post->description ?? "CoderProphet brought programming and technology guide for you. Take your skills to the next level with me on Programmning, Linux, Technology and so much more." }}" />
     <meta name="twitter:title" content="{{ $post->title ?? 'CoderProphet' }}" />
     <meta name="twitter:image" content="{{ $post->thumbnail ?? '/images/logo.svg'}}" />   
 
