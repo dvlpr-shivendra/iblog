@@ -5,11 +5,11 @@
 <section class="hero is-link is-fullheight-with-navbar">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">
-          Blog for developers
+        <h1 class="title m-b-10">
+          CoderProphet
         </h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, esse? Inventore quis sint, excepturi nobis nam aliquid maxime porro, numquam, repudiandae corporis vero beatae quod laboriosam laudantium natus recusandae repellendus.</p>
-        <a class="button is-light m-t-10" href="{{ route('posts.index') }}">Show posts</a>
+        <p>CoderProphet brought programming and technology guide for you. Take your skills to the next level with me on Programmning, Linux, Technology and so much more.</p>
+        <a class="button is-light m-t-20" href="{{ route('posts.index') }}">Browse posts</a>
       </div>
     </div>
   </section>
