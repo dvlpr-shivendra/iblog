@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Laravelista\Comments\Commentable;
 
 class Post extends Model
@@ -27,5 +28,14 @@ class Post extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function deleteBodyImages()
+    {
+        preg_match_all('/post-images\/[\w]+\.[jpngif]{3}/', $this->body, $images);
+        $images = array_unique($images);
+        foreach ($images as $image) {
+            Storage::delete($image);
+        }
     }
 }

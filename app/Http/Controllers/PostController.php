@@ -99,6 +99,7 @@ class PostController extends Controller
     public function destroy(Post $post) {
         if($post->delete()) {
             Storage::delete($post->thumbnail);
+            $post->deleteBodyImages();
             return back()->with('success', 'Post Deleted.');
         }
         return back()->with('error', 'Something went wrong.');
