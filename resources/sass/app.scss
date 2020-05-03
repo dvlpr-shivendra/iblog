@@ -38,6 +38,7 @@ $sides: (top, bottom, left, right);
 
 #app {
     background: url(/images/bg.jpg);
+    min-height: 100vh;
 }
 
 nav {

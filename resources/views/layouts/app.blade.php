@@ -40,7 +40,7 @@
     @stack('styles')
 
 </head>
-<body>
+<body class="">
 
     <div id="app">
 
@@ -54,12 +54,10 @@
     </div>
 
     <footer class="footer p-t-25 p-b-25">
-        <div class="content has-text-centered">
-          <p>
-            Designed & Developed by Shivendra TechSter
-          </p>
-        </div>
-      </footer>
+      <div class="content has-text-centered">
+        <p>Designed & Developed by Shivendra TechSter</p>
+      </div>
+    </footer>
 
     <script src="{{ asset('js/app.js') }}"></script>
 
