@@ -75,6 +75,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.js"></script>
 
         <script>
+            Trix.config.attachments.preview.caption = { name: false, size: false }
             addEventListener("trix-attachment-add", function (event) {
                 if (event.attachment.file) {
                     const formData = new FormData();

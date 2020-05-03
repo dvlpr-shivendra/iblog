@@ -77,6 +77,7 @@
 
     <script>
         addEventListener("trix-attachment-add", function (event) {
+            Trix.config.attachments.preview.caption = { name: false, size: false }
             if (event.attachment.file) {
                 const formData = new FormData();
                 formData.append("image", event.attachment.file);
