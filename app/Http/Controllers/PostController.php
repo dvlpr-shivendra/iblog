@@ -66,7 +66,10 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('posts.edit', compact($post));
+        return view('posts.edit', [
+            'post' => $post,
+            'tags' => Tag::all(),
+        ]);
     }
 
     /**
@@ -76,8 +79,17 @@ class PostController extends Controller
     public function update(Post $post)
     {
         $attributes = $this->validateAttributes();
+
+        if (request()->hasFile('thumbnail')) {
+            $attributes['thumbnail'] = request()
+            ->file('thumbnail')
+            ->store('thumbnails');
+        }
+    
         $post->update($attributes);
-        return view('posts.create');
+        $post->tags()->detach($post->tags);
+        $post->tags()->attach(request()->tags);
+        return redirect($post->url());
     }
 
     /**
@@ -85,12 +97,11 @@ class PostController extends Controller
      * @return RedirectResponse
      */
     public function destroy(Post $post) {
-        try {
-            $post->delete();
+        if($post->delete()) {
+            Storage::delete($post->thumbnail);
             return back()->with('success', 'Post Deleted.');
-        } catch (Exception $e) {
-            return back()->with('error', $e->getMessage());
         }
+        return back()->with('error', 'Something went wrong.');
     }
 
     /**
