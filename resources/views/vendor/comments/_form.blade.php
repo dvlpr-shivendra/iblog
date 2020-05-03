@@ -46,7 +46,7 @@
             </label>
 {{--            <small class="form-text text-muted"><a target="_blank" href="https://help.github.com/articles/basic-writing-and-formatting-syntax">Markdown</a> cheatsheet.</small>--}}
         </div>
-        <button class="button is-primary m-t-5">Comment</button>
+        <button class="button is-link">Comment</button>
     </form>
 </div>
 <br />
