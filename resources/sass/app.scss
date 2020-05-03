@@ -13,6 +13,7 @@ $grey-dark: #050404;
 
 @import '~bulma';
 @import '~bulma-tooltip';
+@import '../../node_modules/animate.css/animate.css';
 
 // Generate margin padding helpers
 $spaceAmounts: (1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);

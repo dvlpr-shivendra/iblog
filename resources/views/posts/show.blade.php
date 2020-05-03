@@ -75,6 +75,8 @@
             if (window.scrollY > (window.innerHeight / 3)) {
                 if (stats.classList.contains('is-hidden')) {
                     stats.classList.remove('is-hidden');
+                    stats.classList.add('animated');
+                    stats.classList.add('fadeIn');
                 }
             } else {
                 stats.classList.add('is-hidden');
