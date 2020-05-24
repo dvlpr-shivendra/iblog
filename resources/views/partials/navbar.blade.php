@@ -39,7 +39,7 @@
             <div class="navbar-item is-hidden-touch">
                 <div class="control">
                     <a class="button is-info search-button"
-                        onclick="document.querySelector('#search-modal').classList.add('is-active')">
+                        onclick="document.querySelector('#search-modal').classList.add('is-active', 'fadeIn')">
                         <span class="material-icons">
                             search
                         </span>
