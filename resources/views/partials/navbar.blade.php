@@ -27,6 +27,9 @@
             <a class="navbar-item {{ Request::is('posts') ? 'is-active' : '' }}" href="{{ route('posts.index') }}">
                 Posts
             </a>
+            <a class="navbar-item {{ Request::is('posts') ? 'is-active' : '' }}" href="/pages/contact">
+                Contact
+            </a>
             @can('manage-posts')
                 <a class="navbar-item {{ Request::is('posts/create') ? 'is-active' : '' }}"
                    href="{{ route('posts.create') }}">

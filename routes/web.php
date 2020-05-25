@@ -33,6 +33,8 @@ Route::post('/posts/{post}/like', 'PostController@like');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/pages/contact', 'PageController@contact')->name('contact');
+Route::get('/pages/{page}', 'PageController@render')->name('pages');
 
 Route::post('/search/post', 'SearchController@post')->name('search.post');
 
