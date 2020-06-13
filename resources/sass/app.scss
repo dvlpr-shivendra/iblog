@@ -38,7 +38,6 @@ $sides: (top, bottom, left, right);
 // END: Generate margin padding helpers
 
 #app {
-    background: url(/images/bg.jpg);
     min-height: 100vh;
 }
 
@@ -91,6 +90,12 @@ pre {
   background: #272a34;
   color: #fff;
   border-radius: 3px;
+}
+
+.modest-shadow {
+  -webkit-box-shadow: 0 10px 14px -7px rgba(0, 0, 40, 0.5);
+     -moz-box-shadow: 0 10px 14px -7px rgba(0, 0, 40, 0.5);
+          box-shadow: 0 10px 14px -7px rgba(0, 0, 40, 0.5);
 }
 
 
