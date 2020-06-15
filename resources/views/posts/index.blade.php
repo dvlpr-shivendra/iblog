@@ -6,7 +6,7 @@
       <div class="columns">
         <div class="column is-three-quarters">
           @forelse($posts as $post)
-          <div class="box is-flex has-text-grey-light has-background-grey-dark modest-shadow">
+          <div class="box is-flex has-text-grey-light has-background-grey-dark">
               <article>
                   <div class="tags m-b-10">
                       @foreach($post->tags as $tag)
@@ -45,7 +45,7 @@
           {{ $posts->links() }}
         </div>
         <div class="column">
-          <div class="box has-text-white has-background-grey-dark modest-shadow" style="position: sticky; top: 100px;">
+          <div class="box has-text-white has-background-grey-dark" style="position: sticky; top: 100px;">
             <aside>
               <div>
                   <h1 class="is-size-4 has-text-weight-bold m-b-30">Tags <span style="width: 100%"></span></h1>

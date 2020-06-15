@@ -45,6 +45,10 @@ nav {
     border-bottom: 3px solid $primary;
 }
 
+.hero {
+  clip-path: polygon(100% 0, 100% 80%, 0% 94%, 0 0);
+}
+
 article { width: 100%; }
 
 .error {
@@ -84,12 +88,6 @@ trix-editor {
 
 .light-border {
   border: 1px solid #ccc; border-radius: 3px;
-}
-
-pre {
-  background: #272a34;
-  color: #fff;
-  border-radius: 3px;
 }
 
 .modest-shadow {

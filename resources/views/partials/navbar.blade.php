@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="/">
-            <img src="/images/logo.svg" width="auto" height="28" alt="CoderProphet logo">
+            <img src="/images/logo.svg" width="auto" height="28" alt="ModestDeveloper logo">
         </a>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
@@ -27,7 +27,7 @@
             <a class="navbar-item {{ Request::is('posts') ? 'is-active' : '' }}" href="{{ route('posts.index') }}">
                 Posts
             </a>
-            <a class="navbar-item {{ Request::is('posts') ? 'is-active' : '' }}" href="/pages/contact">
+            <a class="navbar-item {{ Request::is('pages/contact') ? 'is-active' : '' }}" href="/pages/contact">
                 Contact
             </a>
             @can('manage-posts')
