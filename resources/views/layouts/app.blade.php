@@ -6,25 +6,25 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $post->title ?? 'CoderProphet' }}</title>
+    <title>{{ $title ?? 'Modest Developer Blog' }}</title>
 
-    <meta name="description" content="{{ $post->description ?? "CoderProphet brought programming and technology guide for you. Take your skills to the next level with me on Programmning, Linux, Technology and so much more." }}">
+    <meta name="description" content="{{ $description ?? "Blog of a working developer. Here you can find posts about html, css, javascript, php, laravel, linux and programming in general" }}">
 
-    <meta property="og:title" content="{{ $post->title ?? 'CoderProphet' }}" />
+    <meta property="og:title" content="{{ $title ?? 'Modest Developer Blog' }}" />
     <meta property="og:type" content="Programming.Posts" />
     <meta property="og:url" content="{{ env('APP_URL') }}" />
-    <meta property="og:image" content="{{ $post->thumbnail ?? '/images/logo.svg'}}" />
+    <meta property="og:image" content="{{ isset($thumbnail) ? url("storage/$thumbnail") : asset('/images/logo.svg') }}" />
     <meta property="og:site_name" content="{{ env('APP_NAME')}}" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:description" content="{{ $post->description ?? "CoderProphet brought programming and technology guide for you. Take your skills to the next level with me on Programmning, Linux, Technology and so much more." }}" />
-    <meta name="twitter:title" content="{{ $post->title ?? 'CoderProphet' }}" />
-    <meta name="twitter:image" content="{{ $post->thumbnail ?? '/images/logo.svg'}}" />   
+    <meta name="twitter:description" content="{{ $description ?? "Blog of a working developer. Here you can find posts about html, css, javascript, php, laravel, linux and programming in general" }}" />
+    <meta name="twitter:title" content="{{ $title ?? 'Modest Developer Blog' }}" />
+    <meta name="twitter:image" content="{{ isset($thumbnail) ? url("storage/$thumbnail") : asset('/images/logo.svg') }}" />   
 
     @if (isset($post))
-    <meta property="article:tag" content="employees" />
-    <meta property="article:published_time" content="2016-08-29T06:27:55+00:00" />
-    <meta property="og:updated_time" content="2018-02-10T17:29:32+00:00" />
+    <meta property="article:tag" content="{{ implode(', ', $post->tags()->pluck('title')->toArray()) }}" />
+    <meta property="article:published_time" content="{{ $post->created_at }}" />
+    <meta property="og:updated_time" content="{{ $post->updated_at }}" />
     @endif
 
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

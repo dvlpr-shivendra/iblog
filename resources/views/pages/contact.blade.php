@@ -1,5 +1,9 @@
 @extends("layouts.app")
 
+@php
+    $title = "Contact me";    
+@endphp
+
 @section("content")
 <div class="container m-t-20">
     <div class="card">
@@ -53,7 +57,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <div class="control">
-                                    <label class="label">Question
+                                    <label class="label">Message
                                         <textarea class="textarea {{ $errors->has('message') ? 'is-danger' : ''}}" name="message" required></textarea>
                                     </label>
                                     @error('message')

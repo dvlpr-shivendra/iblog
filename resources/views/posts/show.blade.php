@@ -1,5 +1,9 @@
 @extends('layouts.app')
-
+@php
+    $title = $post->title;
+    $description = $post->description;
+    $thumbnail = $post->thumbnail;
+@endphp
 @section('content')
 
     <div class="columns show-post m-l-5 m-r-5 m-t-20">
