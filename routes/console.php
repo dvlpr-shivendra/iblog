@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
+use Spatie\Sitemap\SitemapGenerator;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
+
+Artisan::command('generate-sitemap', function () {
+    SitemapGenerator::create(env('APP_URL'))->writeToFile(public_path('sitemap.xml'));
+})->describe('Generate sitemap');
