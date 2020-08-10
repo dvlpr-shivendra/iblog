@@ -6,19 +6,19 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'Modest Developer Blog' }}</title>
+    <title>{{ $title ?? 'Modest Developer - Blog of a working developer' }}</title>
 
-    <meta name="description" content="{{ $description ?? "Blog of a working developer. Here you can find posts about html, css, javascript, php, laravel, linux and programming in general" }}">
+    <meta name="description" content="{{ $description ?? "Blog for developers and geeks. Here you can find posts about html, css, javascript, php, laravel, linux and programming in general." }}">
 
-    <meta property="og:title" content="{{ $title ?? 'Modest Developer Blog' }}" />
+    <meta property="og:title" content="{{ $title ?? 'Modest Developer - Blog of a working developer' }}" />
     <meta property="og:type" content="Programming.Posts" />
     <meta property="og:url" content="{{ env('APP_URL') }}" />
     <meta property="og:image" content="{{ isset($thumbnail) ? url("storage/$thumbnail") : asset('/images/logo.svg') }}" />
     <meta property="og:site_name" content="{{ env('APP_NAME')}}" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:description" content="{{ $description ?? "Blog of a working developer. Here you can find posts about html, css, javascript, php, laravel, linux and programming in general" }}" />
-    <meta name="twitter:title" content="{{ $title ?? 'Modest Developer Blog' }}" />
+    <meta name="twitter:description" content="{{ $description ?? "Blog for developers and geeks. Here you can find posts about html, css, javascript, php, laravel, linux and programming in general." }}" />
+    <meta name="twitter:title" content="{{ $title ?? 'Modest Developer - Blog of a working developer' }}" />
     <meta name="twitter:image" content="{{ isset($thumbnail) ? url("storage/$thumbnail") : asset('/images/logo.svg') }}" />   
 
     @if (isset($post))
