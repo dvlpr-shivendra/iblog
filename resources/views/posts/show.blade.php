@@ -43,7 +43,6 @@
         <div class="column"></div>
         <div class="column is-half">
             <div class="m-t-20">
-                <div style="border-bottom: 1px solid #ccc" id="comments"></div>
                 <h3 class="m-b-20 m-t-20 is-size-4">Comments ({{ $post->approvedComments->count() }})</h3>
                 @comments(['model' => $post, 'approved' => true])
             </div>

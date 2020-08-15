@@ -2,9 +2,18 @@ $tag-radius: 25px;
 
 $box-shadow: none;
 
-$primary: #F44881;
+$primaryPink: #F44881;
+$primary: $primaryPink;
 $dark: #100e17;
 $grey-dark: #050404;
+
+$input-border-color: rgba(0, 0, 0, 0);
+$input-background-color: whitesmoke;
+$input-focus-border-color: $primaryPink;
+$input-focus-box-shadow-size: 0 0 0 0;
+
+::-moz-selection { background: $primaryPink; }
+::selection { background: $primaryPink; }
 
 .columns {
     margin-left: 0 !important;
@@ -43,10 +52,6 @@ $sides: (top, bottom, left, right);
 
 nav {
     border-bottom: 3px solid $primary;
-}
-
-.hero {
-  clip-path: polygon(100% 0, 100% 80%, 0% 94%, 0 0);
 }
 
 article { width: 100%; }
@@ -117,5 +122,11 @@ trix-editor {
     .likes {
       font-size: 1.1rem;
     }
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  html {
+    font-size: 1.3rem;
   }
 }

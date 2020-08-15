@@ -17,7 +17,7 @@
                           </span>
                       @endforeach
                   </div>
-                  <a href="{{ $post->url() }}" class="has-text-grey">
+                  <a href="{{ $post->url() }}" class="has-text-grey-light">
                     <h3 class="title is-size-4 is-capitalized m-b-10 has-text-white">{{ $post->title }}</h3>
                     <div class="m-b-10">
                         <span>{{ $post->created_at->diffForHumans() }}</span>

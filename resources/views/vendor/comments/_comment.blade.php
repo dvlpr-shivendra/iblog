@@ -2,9 +2,9 @@
 @php($markdown->setSafeMode(true))
 
 @if(isset($reply) && $reply === true)
-    <div id="comment-{{ $comment->id }}" class="media m-l-40">
+    <div id="comment-{{ $comment->id }}" class="m-l-40 m-t-20">
         @else
-            <li id="comment-{{ $comment->id }}" class="media p-15 light-border">
+            <li id="comment-{{ $comment->id }}" class=" p-15 m-b-20" style="background: #eee">
                 @endif
                 <div style="width: 100%;">
                     <figure class="image is-24x24 is-pulled-left m-r-10">
