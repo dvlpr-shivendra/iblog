@@ -1,12 +1,9 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
 require('./bulma');
+require('./clipboard');
 
+
+// Search start
 document.querySelector("#search").addEventListener("input", event => {
     const query = event.target.value;
     const searchResults = document.querySelector("#search-results");
@@ -40,3 +37,4 @@ document.querySelector("#search").addEventListener("input", event => {
         });
     })
 });
+// Search End

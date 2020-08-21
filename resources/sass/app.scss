@@ -62,6 +62,15 @@ article { width: 100%; }
   align-items: center;
 }
 
+.copy-btn {
+  display: block;
+  top: -32px;
+  position: relative;
+  float: right;
+  border: none;
+  background: #ddd;
+}
+
 .material-icons {
   vertical-align: middle !important;
 }
