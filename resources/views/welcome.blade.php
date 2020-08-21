@@ -8,9 +8,9 @@
   <div class="hero-body animated fadeIn">
     <div class="container">
       <p class="m-b-5">Featured post</p>
-      <h1 class="title m-b-25">
-        {{$post->title}}
-      </h1>
+      <a href="{{ $post->url() }}">
+        <h1 class="title m-b-25">{{$post->title}}</h1>
+      </a>
       <p class="animated fadeIn is-size-5">{{$post->description}}</p>
       <a class="button is-light m-t-25 has-text-weight-bold" 
         href="{{ $post->url() }}"

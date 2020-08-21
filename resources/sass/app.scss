@@ -25,22 +25,22 @@ $input-focus-box-shadow-size: 0 0 0 0;
 @import '../../node_modules/animate.css/animate.css';
 
 // Generate margin padding helpers
-$spaceAmounts: (1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+$spaceAmounts: (0.1, 0.2, 0.3, 0.4, 0.5, 1, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 7.5, 10);
 $sides: (top, bottom, left, right);
 
 @each $space in $spaceAmounts {
-  .m-#{$space} {
-    margin: #{$space}px !important;
+  .m-#{$space*10} {
+    margin: #{$space}rem !important;
   }
-  .p-#{$space} {
-    padding: #{$space}px !important;
+  .p-#{$space*10} {
+    padding: #{$space}rem !important;
   }
   @each $side in $sides {
-    .m-#{str-slice($side, 0, 1)}-#{$space} {
-      margin-#{$side}: #{$space}px !important;
+    .m-#{str-slice($side, 0, 1)}-#{$space*10} {
+      margin-#{$side}: #{$space}rem !important;
     }
-    .p-#{str-slice($side, 0, 1)}-#{$space} {
-      padding-#{$side}: #{$space}px !important;
+    .p-#{str-slice($side, 0, 1)}-#{$space*10} {
+      padding-#{$side}: #{$space}rem !important;
     }
   }
 }
@@ -115,7 +115,7 @@ trix-editor {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1023px) {
   .stats {
     position: static;
     flex-direction: row;

@@ -6,8 +6,6 @@
 @endphp
 @section('content')
 
-    <button class="btn" data-clipboard-target="pre"></button>
-
     <div class="columns show-post m-l-5 m-r-5 m-t-20">
         <div class="column"></div>
         <div class="column is-half">
