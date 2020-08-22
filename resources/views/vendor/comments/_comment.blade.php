@@ -12,15 +12,15 @@
                     </figure>
                     <h5 class="has-text-grey-dark">{{ $comment->commenter->name ?? $comment->guest_name }}
                         <small
-                            class="has-text-grey">- {{ $comment->created_at->diffForHumans() }}
+                            style="color: #464646">- {{ $comment->created_at->diffForHumans() }}
                         </small>
                     </h5>
-                    <div style="white-space: pre-wrap;" class="m-t-5 m-b-5 m-l-35">{!! $markdown->line($comment->comment) !!}</div>
+                    <div style="white-space: pre-wrap;" class="m-t-5 m-b-5">{!! $markdown->line($comment->comment) !!}</div>
 
-                    <div class="m-l-35">
+                    <div class="">
                         @can('reply-to-comment', $comment)
                             <button onclick="document.querySelector('#reply-{{ $comment->id }}').classList.add('is-active')"
-                                    class="button is-text">Reply
+                                    class="button is-outlined">Reply
                             </button>
                         @endcan
 

@@ -1,4 +1,4 @@
-<div class="m-t-50">
+<div class="m-t-25">
     @if($errors->has('commentable_type'))
         <div class="alert alert-danger" role="alert">
             {{ $errors->first('commentable_type') }}
