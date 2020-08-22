@@ -20,7 +20,7 @@
                     <div class="">
                         @can('reply-to-comment', $comment)
                             <button onclick="document.querySelector('#reply-{{ $comment->id }}').classList.add('is-active')"
-                                    class="button is-outlined">Reply
+                                    class="button is-text">Reply
                             </button>
                         @endcan
 
