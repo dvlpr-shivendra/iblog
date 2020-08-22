@@ -27,6 +27,8 @@
     <meta property="og:updated_time" content="{{ $post->updated_at }}" />
     @endif
 
+    @include('partials.fevicon')
+
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&display=swap" rel="stylesheet">

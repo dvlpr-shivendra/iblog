@@ -20,6 +20,11 @@ $input-focus-box-shadow-size: 0 0 0 0;
     margin-right: 0 !important;
 }
 
+.active-link {
+  background-color: #fafafa !important;
+  color: #3273dc !important;
+}
+
 @import '~bulma';
 @import '~bulma-tooltip';
 @import '../../node_modules/animate.css/animate.css';

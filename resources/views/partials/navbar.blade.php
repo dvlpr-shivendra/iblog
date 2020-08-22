@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-            <img src="/images/logo.svg" width="auto" height="28" alt="ModestDeveloper logo">
+        <a class="navbar-item has-text-weight-bold is-size-4" href="/">
+            ModestDev
         </a>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
@@ -24,14 +24,14 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item {{ Request::is('posts') ? 'is-active' : '' }}" href="{{ route('posts.index') }}">
+            <a class="navbar-item {{ Request::is('posts') ? 'active-link' : '' }}" href="{{ route('posts.index') }}">
                 Posts
             </a>
-            <a class="navbar-item {{ Request::is('pages/contact') ? 'is-active' : '' }}" href="/pages/contact">
+            <a class="navbar-item {{ Request::is('pages/contact') ? 'active-link' : '' }}" href="/pages/contact">
                 Contact
             </a>
             @can('manage-posts')
-                <a class="navbar-item {{ Request::is('posts/create') ? 'is-active' : '' }}"
+                <a class="navbar-item {{ Request::is('posts/create') ? 'active-link' : '' }}"
                    href="{{ route('posts.create') }}">
                     Create
                 </a>
