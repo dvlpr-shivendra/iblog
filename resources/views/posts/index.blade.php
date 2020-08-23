@@ -51,7 +51,7 @@
                   <h1 class="is-size-4 has-text-weight-bold m-b-30">Tags <span style="width: 100%"></span></h1>
                   @foreach($tags as $tag)
                       <p class="m-b-15">
-                          <a href="{{route('posts.index', ['tag' => $tag->title])}}" class="has-text-grey-light">
+                          <a href="{{route('posts.index', ['tag' => $tag->title])}}" class="has-text-grey-lighter">
                               {{ $tag->title }}
                               <span class="tag is-dark is-light is-pulled-right">{{ $tag->posts->count() }}</span>
                           </a>

@@ -2,18 +2,15 @@ $tag-radius: 25px;
 
 $box-shadow: none;
 
-$primaryPink: #F44881;
-$primary: $primaryPink;
-$dark: #100e17;
-$grey-dark: #050404;
+$dark: #000;
+$primary: #5465ff;
+$blue: $primary;
+$grey-dark: #14213d;
+$body-background-color: #faf9f9;
 
 $input-border-color: rgba(0, 0, 0, 0);
 $input-background-color: whitesmoke;
-$input-focus-border-color: $primaryPink;
 $input-focus-box-shadow-size: 0 0 0 0;
-
-::-moz-selection { background: $primaryPink; }
-::selection { background: $primaryPink; }
 
 .columns {
     margin-left: 0 !important;
@@ -56,7 +53,7 @@ $sides: (top, bottom, left, right);
 }
 
 nav {
-    border-bottom: 3px solid $primary;
+    box-shadow: rgba(0,0,0,.11) 0 1px;
 }
 
 article { width: 100%; }
@@ -89,54 +86,12 @@ pre {
   margin: .5rem auto
 }
 
-.stats {
-    position: sticky;
-    top: 50vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    div {
-        cursor: pointer;
-    }
-}
-
-.subtitle {
-    line-height: 1.4rem;
-}
-
 trix-editor {
     background: #fff;
 }
 
 .light-border {
   border: 1px solid #ccc; border-radius: 3px;
-}
-
-.modest-shadow {
-  -webkit-box-shadow: 0 10px 14px -7px rgba(0, 0, 40, 0.5);
-     -moz-box-shadow: 0 10px 14px -7px rgba(0, 0, 40, 0.5);
-          box-shadow: 0 10px 14px -7px rgba(0, 0, 40, 0.5);
-}
-
-
-@media only screen and (max-width: 1023px) {
-  .stats {
-    position: static;
-    flex-direction: row;
-    background: linear-gradient(to left, rgb(33, 200, 246), rgb(99, 123, 255));
-    padding: 20px;
-    border-radius: 3px;
-    color: #fff;
-
-    .comments {
-      display: none;
-    }
-
-    .likes {
-      font-size: 1.1rem;
-    }
-  }
 }
 
 @media only screen and (min-width: 1600px) {
