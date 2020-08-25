@@ -1,5 +1,5 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand is-size-5">
         <a class="navbar-item has-text-weight-bold" href="/">
             ModestDev
         </a>
@@ -12,7 +12,7 @@
         </a>
 
         <div class="navbar-item is-hidden-desktop">
-            <a class="button is-info search-button"
+            <a class="button is-primary search-button"
                 onclick="document.querySelector('#search-modal').classList.add('is-active')">
                 <span class="material-icons">
                     search

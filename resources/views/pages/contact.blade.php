@@ -5,12 +5,20 @@
 @endphp
 
 @section("content")
+<section class="hero is-dark is-small is-bold">
+    <div class="hero-body">
+        <div class="container has-text-centered is-capitalized">
+            <h1 class="is-size-2">Contact me</h1>
+        </div>
+    </div>
+</section>
+
 <div class="container m-t-20">
     <div class="card">
         <div class="card-content">
             <div class="media">
                 <div class="media-content">
-                    <p class="title is-4">Drop an email</p>
+                    <p class="title is-4">Drop Your Message</p>
                 </div>
             </div>
 

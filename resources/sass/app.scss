@@ -3,7 +3,7 @@ $tag-radius: 25px;
 $box-shadow: none;
 
 $dark: #000;
-$primary: #5465ff;
+$primary: #2E5A71;
 $blue: $primary;
 $grey-dark: #14213d;
 $body-background-color: #faf9f9;
@@ -18,8 +18,12 @@ $input-focus-box-shadow-size: 0 0 0 0;
 }
 
 .active-link {
-  background-color: #fafafa !important;
-  color: #3273dc !important;
+  background-color: darken($primary, 3%) !important;
+  color: #fff !important;
+}
+
+.is-elevated {
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.0) !important;
 }
 
 @import '~bulma';
@@ -50,10 +54,6 @@ $sides: (top, bottom, left, right);
 
 #app {
     min-height: 100vh;
-}
-
-nav {
-    box-shadow: rgba(0,0,0,.11) 0 1px;
 }
 
 article { width: 100%; }
